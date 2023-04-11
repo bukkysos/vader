@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h2 {
+  color: red;
+  font-family: 'CircularStd';
+  font-weight: 700;
+}
+
+p {
+  color: green;
+  font-family: 'Gotham';
+  font-weight: 450;
+}
