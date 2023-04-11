@@ -5,14 +5,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h2 {
-  color: red;
-  font-family: 'CircularStd';
-  font-weight: 700;
-}
+:root {
+  --primary-dark-bg: #1B1F32;
+  --secondary-dark-bg: #1D283C;
 
-p {
-  color: green;
-  font-family: 'Gotham';
-  font-weight: 450;
+  --text-disabled: #8F929B;
+  --icon-disabled: #8F929B;
+
+  --text-default-color: #FDFDFD;
+  --title-heading-color: #FFFFFF;
+  --text-warning: #E8BA35;
 }
