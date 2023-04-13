@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Banner } from '../molecules/banner'
 import { ContainerWrapper } from '../molecules/containerWrapper'
-import { useSelector } from 'react-redux'
 import { useInfiniteQuery, useQuery } from 'react-query'
 import { MOVIE_CAST_URL, SIMILAR_MOVIES_URL, SINGLE_MOVIE_DETAILS } from '../config'
 import { Requests } from '../config/requestProcessor'
@@ -13,7 +12,6 @@ export const Details = () => {
   const [pageNo, setPageNo] = useState(1);
   const [totalPageNo, setTotalPageNo] = useState(1);
   const [moviesData, setMoviesData] = useState([]);
-  const searchDetails = useSelector((state) => state?.searchValue);
 
   const { id } = useParams()
 
@@ -35,12 +33,12 @@ export const Details = () => {
     }
   )
 
-  const { data: castData, isLoading: castDataLoading } = useQuery(
+  const { data: castData } = useQuery(
     'movie-cast-data', () => Requests.fetchSingleMovieCast(`${splitUrl(MOVIE_CAST_URL)}`, 'GET'),
     { refetchOnWindowFocus: false }
   )
 
-  const { data: singleMovieData, isLoading: singleMovieDataLoading } = useQuery(
+  const { data: singleMovieData } = useQuery(
     'single-movie-data', () => Requests.fetchSingleMovie(`${splitUrl(SINGLE_MOVIE_DETAILS)}`, 'GET'),
     { refetchOnWindowFocus: false }
   )

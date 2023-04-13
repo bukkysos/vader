@@ -1,5 +1,4 @@
 import React from 'react'
-import { MovieImage } from '../../assets/images'
 import { IMAGE_URL } from '../../config'
 
 export const Cards = ({ cardType = 'movies', title, imageUrl, releaseDate = null, character = null }) => {

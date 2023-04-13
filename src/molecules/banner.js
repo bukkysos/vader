@@ -1,5 +1,4 @@
 import React from 'react'
-import { BannerImage } from '../assets/images'
 import { InfoCircle, PlayCircle, StarIcon } from '../assets/svg'
 import { IMAGE_URL } from '../config'
 
