@@ -2,10 +2,9 @@ import React from 'react';
 import { Cards } from '../atoms/cards'
 import { MoviesAndCast } from './moviesAndCast';
 import { ProgressLoader } from '../atoms/fetchingIndicator';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const ContainerWrapper = ({ headerTitle, isLoading = null, data, fetchingData = null, fetchNextPage = null, moviesData, getNewMovieId }) => {
-    const navigate = useNavigate();
 
     function handleScrollEnd() {
         if (fetchNextPage !== null) {

@@ -20,8 +20,6 @@ export const Details = () => {
   const splitUrl = (urlString) => {
     return urlString.split('{movie_id}').join(id)
   }
-  console.log({ searchDetails, id });
-
 
   const { data, isLoading, isFetching, fetchNextPage } = useInfiniteQuery(
     'all-similar-movies-data', () => Requests.fetchSingleMovie(`${splitUrl(SIMILAR_MOVIES_URL)}${pageNo}`, 'GET'),
@@ -53,10 +51,6 @@ export const Details = () => {
     setTotalPageNo(data?.pages[0]?.total_pages);
   }, [data])
 
-  useEffect(() => {
-    console.log(singleMovieData);
-  }, [singleMovieData])
-
   return (
     <>
       <Banner
@@ -83,7 +77,14 @@ export const Details = () => {
 
       <div className='d-none d-md-block'>
         <CastContainerWrapper headerTitle={'Cast'} data={castData?.cast} />
-        <ContainerWrapper headerTitle={'You might also like'} isLoading={isLoading} data={data} fetchingData={isFetching} fetchNextPage={fetchNextPage} moviesData={moviesData} />
+        <ContainerWrapper
+        headerTitle={'You might also like'}
+        isLoading={isLoading}
+        data={data}
+        fetchingData={isFetching}
+        fetchNextPage={fetchNextPage}
+        moviesData={moviesData}
+        />
       </div>
 
     </>
