@@ -1,7 +1,6 @@
 import React from 'react';
 import { Cards } from '../atoms/cards'
 import { MoviesAndCast } from './moviesAndCast';
-import { Link } from 'react-router-dom';
 
 export const CastContainerWrapper = ({ headerTitle, isLoading = null, data }) => {
 
