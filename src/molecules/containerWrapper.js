@@ -1,12 +1,13 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { addMovies } from '../store/slices/moviesSlice';
+import { useSelector } from 'react-redux';
+// import { decrement, increment } from '../store/slices/countSlice'
 import { Cards } from '../atoms/cards'
 import { MoviesAndCast } from './moviesAndCast';
 
 export const ContainerWrapper = ({ title }) => {
-    const allMovies = useSelector((state) => state?.allMovies);
+    const searchDetails = useSelector((state) => state?.searchValue);
 
-    console.log({allMovies});
+    console.log({searchDetails});
+    console.log('klksljo abeg');
 
     function handleScrollEnd() {
         // console.log('User has scrolled to the end!');
