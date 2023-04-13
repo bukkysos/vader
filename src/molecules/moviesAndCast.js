@@ -1,8 +1,7 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react'
-import { Cards } from '../atoms/cards'
+import React, { useEffect, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight } from '../assets/svg'
 
-const MoviesAndCast = (props) => {
+export const MoviesAndCast = (props) => {
     const [directionState, setDirectionState] = useState({
         canGoRight: true,
         canGoLeft: false
@@ -85,33 +84,5 @@ const MoviesAndCast = (props) => {
                 {props.children}
             </div>
         </div>
-    )
-}
-
-
-export const ContainerWrapper = ({ title }) => {
-
-    function handleScrollEnd() {
-        console.log('User has scrolled to the end!');
-    }
-
-    return (
-        <MoviesAndCast onScrollEnd={handleScrollEnd} sectionTitle={title}>
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            <Cards cardType={title === 'Cast' ? 'default' : 'movies'} />
-            
-        </MoviesAndCast>
     )
 }

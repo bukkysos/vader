@@ -1,6 +1,6 @@
 import React from 'react'
 import { Banner } from '../molecules/banner'
-import { ContainerWrapper } from '../molecules/moviesAndCast'
+import { ContainerWrapper } from '../molecules/containerWrapper'
 
 
 export const Home = () => {
