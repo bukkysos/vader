@@ -18,6 +18,10 @@ body {
   background-color: var(--primary-dark-bg);
 }
 
+a {
+  text-decoration: none;
+}
+
 p {
   color: var(--text-default-color);
   font-size: 16px;
@@ -180,10 +184,12 @@ body.modal-open .bg {
 
 .movies {
   padding: 8% 0px 8% 8%;
+  position: relative;
 }
 
 .cast {
   padding: 8% 35px 8% 4%;
+  position: relative;
 }
 
 .section {
@@ -226,6 +232,7 @@ body.modal-open .bg {
   height: 266px;
   border-radius: 4px;
   margin-bottom: 11px;
+  cursor: pointer;
 }
 
 .card-image>img {
@@ -233,6 +240,12 @@ body.modal-open .bg {
   object-fit: cover;
   object-position: bottom;
   border-radius: 4px;
+}
+
+.release-date {
+  border-right: 1px solid #fff;
+  padding-right: 5px;
+  margin-right: 4px;
 }
 
 /* Details Page */
@@ -250,6 +263,43 @@ body.modal-open .bg {
   top: 2rem;
   background: #98B6FF;
   border-radius: 4px 4px 0px 0px;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #c9c9c9;
+  border-radius: 50%;
+  border-top: 10px solid #27272738;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  z-index: 90;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% {
+      -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+      -webkit-transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(360deg);
+  }
 }
 
 @media screen and (max-width: 767px) {
