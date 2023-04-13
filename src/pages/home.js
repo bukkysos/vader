@@ -28,7 +28,6 @@ export const Home = () => {
             }
         }
     )
-
     useEffect(() => {
         setPageNo(data?.pages[0]?.page + 1);
         setMoviesData(data?.pages[0]?.results);

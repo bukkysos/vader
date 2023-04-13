@@ -30,15 +30,50 @@ instance.interceptors.response.use(
 );
 
 Requests.fetchMovies = async (
-    url
+    url,
+    method
 ) => {
-    instance.defaults.baseURL =  mainUrl;
+    instance.defaults.baseURL = mainUrl;
 
     try {
-        const response = await instance(url);
+        const response = await instance(url, {
+            method
+        });
         return response?.data;
     } catch (error) {
-        // console.error(error?.response);
         return error?.response;
     }
 };
+
+Requests.fetchSingleMovieCast = async (
+    url,
+    method
+) => {
+    instance.defaults.baseURL = mainUrl;
+
+    try {
+        const response = await instance(url, {
+            method
+        });
+        return response?.data;
+    } catch (error) {
+        return error?.response;
+    }
+};
+
+Requests.fetchSingleMovie = async (
+    url,
+    method
+) => {
+    instance.defaults.baseURL = mainUrl;
+
+    try {
+        const response = await instance(url, {
+            method
+        });
+        return response?.data;
+    } catch (error) {
+        return error?.response;
+    }
+};
+
