@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Banner } from '../molecules/banner'
-import { ContainerWrapper } from '../molecules/moviesAndCast'
+import { ContainerWrapper } from '../molecules/containerWrapper'
+// import { ContainerWrapper } from '../molecules/moviesAndCast'
 
 export const Details = () => {
   const [tab, setTab] = useState('Cast')
