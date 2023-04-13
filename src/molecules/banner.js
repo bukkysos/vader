@@ -5,7 +5,7 @@ import { InfoCircle, PlayCircle, StarIcon } from '../assets/svg'
 export const Banner = ({ fromDefaultPage = true }) => {
     return (
         <div className='banner col-12 m-0 position-relative'>
-            <img src={BannerImage} alt='Banner Image' className='position-absolute w-100' />
+            <img src={BannerImage} alt='Banner' className='position-absolute w-100' />
             <div className="banner-details d-flex flex-column justify-content-center">
                 <span><small className='featured'>Featured</small><small>2019 | Action, Sci-Fi, Drama</small></span>
                 <span>

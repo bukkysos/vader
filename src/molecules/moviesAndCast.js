@@ -65,9 +65,10 @@ export const MoviesAndCast = (props) => {
     }
 
     useEffect(() => {
+        let currentElement = containerRef.current;
         const handleScroll = detectHorizontalScrollEnd(props.onScrollEnd);
-        containerRef.current.addEventListener('scroll', handleScroll);
-        return () => containerRef.current.removeEventListener('scroll', handleScroll);
+        currentElement.addEventListener('scroll', handleScroll);
+        return () => currentElement.removeEventListener('scroll', handleScroll);
     });
 
     return (

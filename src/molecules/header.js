@@ -1,8 +1,23 @@
-import React, { useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Logo, SearchIcon } from '../assets/svg'
+import { useDispatch, useSelector } from 'react-redux';
+import { storeSearchValue } from '../store/slices/searchSlice';
+// import { addMovies } from '../store/slices/moviesSlice';
 
 export const Header = () => {
-    const [searchVal, setSearchVal] = useState('')
+    const searches = useSelector((state) => state);
+    const [searchVal, setSearchVal] = useState('');
+    const dispatch = useDispatch()
+
+    console.log(searches, ' from header')
+
+    const updateStore = useCallback(() => {
+        dispatch(storeSearchValue(searchVal));
+    }, [searchVal, dispatch])
+
+    useEffect(() => {
+        updateStore();
+    }, [updateStore])
     return (
         <nav className='nav'>
             <div className='nav-wrapper d-flex justify-content-between align-items-center'>
